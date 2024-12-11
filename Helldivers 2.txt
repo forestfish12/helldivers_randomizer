@@ -1,0 +1,154 @@
+	#Stratagems
+1. Machine Gun
+2. Anti-Material Rifle
+3. Stalwart
+4. Expendable Anti-Tank
+5. Recoilless Rifle
+6. Flamethrower
+7. Autocannon
+8. Heavy Machine Gun
+9. Airburst Rocket Launcher
+10. Railgun
+11. Spear
+12. Orbital Gatling Barrage
+13. Orbital Airburst Strike
+14. Orbital 120MM HE Barrage
+15. Orbital 380MM HE Barrage
+16. Orbital Walking Barrage
+17. Orbital Laser
+18. Orbital Railcannon Strike
+19. Eagle Strafing Run
+20. Eagle Airstrike
+21. Eagle Cluster Bomb
+22. Eagle Napalam Aistrike
+23. Jump Pack
+24. Eagle Smoke Strike
+25. Eagle 110MM Rocket Pods
+26. Eagle 500KG Bomb
+27. Orbital Precision Strike
+28. Orbital Gas Strike
+29. Orbital EMS Strike
+30. Orbital Smoke Strike
+31. HMG Emplacement
+32. Shield Generator Relay
+33. Tesla Tower
+34. Anti-Personnel Minefield
+35. Supply Pack
+36. Grenade Launcher
+37. Laser Cannon
+38. Incendiary Mines
+39. "Guard Dog" Rover
+40. Ballistic Shield Backpack
+41. Arc Thrower
+42. Quasar Cannon
+43. Shield Generator Pack
+44. Machine Gun Sentry
+45. Gatling Sentry
+46. Mortar Sentry
+47. "Guard Dog"
+48. Autocannon Sentry
+49. Rocket Sentry
+50. EMS Mortar Sentry
+51. Patriot Exosuit
+52. Emancipator Exosuit
+53. MLS-4X Commando
+54. Anti-Tank Mines
+55. Orbital Napalm Barrage
+56. Sterilizer
+57. "Guard Dog" Dog Breath
+	#Primaries
+1. AR-23 Liberator
+2. SG-8 Punisher
+3. R-63 Diligence
+4. SMG-37 Defender
+5. SG-225 Breaker
+6. LAS-5 Scythe
+7. AR-23P Liberator Penetrator
+8. R-63CS Diligence Counter Sniper
+9. SG-8S Slugger
+10. SG-225SP Breaker Spray&Pray
+11. PLAS-1 Scorcher
+12. AR-23C Liberator Concussive
+13. SG-225IE Breaker Incendiary
+14. JAR-5 Dominator
+15. LAS-16 Sickle
+16. SG-8P Punisher Plasma
+17. ARC-12 Blitzer
+18. BR-14 Adjudicator
+19. R-36 Eruptor
+20. CB-9 Exploding Crossbow
+21. AR-61 Tenderizer
+22. SMG-72 Pummeler
+23. PLAS-101 Purifier
+24. AR-23A Liberator Carbine
+25. SG-451 Cookout
+26. Flam-66 Torcher
+27. R-2124 Constitution
+28. SG-20 Halt
+29. SMG-32 Reprimand
+	#Secondaries
+1. P-2 Peacemaker
+2. P-19 Redeemer
+3. P-4 Senator
+4. LAS-7 Dagger
+5. GP-31 Grenade Pistol
+6. P-113 Verdict
+7. SG-22 Bushwhacker
+8. P-72 Crisper
+9. P-11 Stim Pistol
+10. Plas-15 Loyalist
+	#Grenades
+1. G-12 High Explosive
+2. G-6 Frag
+3. G-16 Impact
+4. G-3 Smoke
+5. G-10 Incendiary
+6. G-23 Stun
+7. G-123 Thermite Grenade
+8. G-13 Incendiary Impact
+9. K-2 Throwing Knife
+10. G-4 Gas
+	#Armor/Helmets
+1. B-01 Tactical 1 (Drape of Glory)
+2. B-01 Tactical 2 (Drape of Glory)
+3. B-01 Tactical 3 (Drape of Glory)
+4. B-01 Tactical 4 (Drape of Glory)
+5. B-08 Light Gunner (Foesmasher)
+6. SC-34 Infiltrator (Independence Bringer)
+7. FS-05 Marksman (Liberty's Herald)
+8. FS-11 Executioner (Foesmasher)
+9. CE-35 Trench Engineer (Tideturner)q
+10. CM-09 Bonesnapper (Stars and Suffrage)
+11. DP-40 Hero of the Federation (Unblemished Allegiance)
+12. FS-23 Battle Master (Judgment Day)
+13. FS-61 Dreadnought (Liberty's Herald)
+14. SC-30 Trailblazer Scout (Cresting Honor)
+15. SA-04 Combat Technician (Mantle of True Citizenship)
+16. CM-14 Physician (Blazing Samaritan)
+17. DP-11 Champion of the People (Light of Eternal Liberty)
+18. SA-25 Steel Trooper (Tyrant Hunter)
+19. SA-12 Servo-Assisted (Posterity's Gratitude)
+20. SA-32 Dynamo (Bastion of Integrity)
+21. EX-03 Prototype 3 (Botslayer)
+22. EX-16 Prototype 16 (Martyris Rex)
+23. EX-00 Prototype X (Agent of Oblivion)
+24. CE-27 Ground Breaker (Harbinger of True Quality)
+25. CE-07 Demolition Specialist (Eagle's Fury)
+26. FS-55 Devastator (Freedom's Tapestry)
+27. CW-36 Winter Warrior (Dissident's Nightmare)
+28. CW-22 Kodiak (Pinions of Everlasting Glory)
+29. CW-4 Arctic Ranger (Order of the Venerated Ballot)
+30. B-27 Fortified Commando
+31. PH-9 Predator (Mark of the Crimson Fang)
+32. PH-202 Twigsnapper (Executioner's Canopy)
+33. TR-40 Gold Eagle (Foesmasher)
+34. I-09 Heatseeker (Purifying Eclipse)
+35. I-102 Draconaught (The Breach)
+36. CE-101 Guerilla Gorilla
+37. SC-37 Legionnaire
+38. AF-50 Noxious Ranger (Standard of Safe Distance)
+39. AF-02 Haz-Master (Patient Zero's Rememberance)
+40. DP-00 Tactical
+41. UF-50 Bloodhound (Pride of the Whistleblower)
+42. UF-16 Inspector (Proof of Faultless Virtue)
+43. PH-56 Jaguar
