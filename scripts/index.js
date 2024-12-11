@@ -1,166 +1,61 @@
-const armor_set = [
-    {
-        helmet: 'SC-34 Infiltrator',
-        armor: 'SC-34 Infiltrator',
-        cape: 'Independence Bringer',
-        banner: 'Independence Bringer'
-    },
-    {
-        helmet: 'FS-05 Marksman',
-        armor : 'FS-05 Marksman',
-        cape : 'Liberty\'s Herald',
-        banner : 'Liberty\'s Herald',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
-    {
-        helmet: '',
-        armor : '',
-        cape : '',
-        banner : '',
-    },
- 
-]
+import data from "./modules/data.js";
 
-const stratagems = [
-    'MG-43 Machine Gun',
-    'APW-1 Anti-Materiel Rifle',
-    'M-105 Stalwart',
-    'EAT-17 Expendable Anti-Tank',
-    'GR-8 Recoilless Rifle',
-    'FLAM-40 Flamethrower',
-    'AC-8 Autocannon',
-    'MG-206 Heavy Machine Gun',
-    'RL-77 Airburst Rocket Launcher',
-    'MLS-4X Commando',
-    'RS-422 Railgun',
-    'FAF-14 Spear',
-    'Orbital Gatling Barrage',
-    'Orbital Airburst Strike',
-    'Orbital 120mm HE Barrage',
-    'Orbital 380mm HE Barrage',
-    'Orbital Walking Barrage',
-    'Orbital Laser',
-    'Orbital Napalm Barrage',
-    'Orbital Railcannon Strike',
-    'Eagle Strafing Run',
-    'Eagle Airstrike',
-    'Eagle Cluster Bomb',
-    'Eagle Napalm Airstrike',
-    'LIFT-850 Jump Pack',
-    'Eagle Smoke Strike',
-    'Eagle 110mm Rocket Pods',
-    'Eagle 500kg Bomb',
-    'Orbital Precision Strike',
-    'Orbital Gas Strike',
-    'Orbital EMS Strike',
-    'Orbital Smoke Strike',
-    'E/MG-101 HMG Emplacement',
-    'FX-12 Shield Generator Relay',
-    'A/ARC-3 Tesla Tower',
-    'MD-6 Anti-Personnel Minefield',
-    'B-1 Supply Pack',
-    'GL-21 Grenade Launcher',
-    'LAS-98 Laser Cannon',
-    'MD-I4 Incendiary Mines',
-    'AX/LAS-5 "Guard Dog" Rover',
-    'SH-20 Ballistic Shield Backpack',
-    'ARC-3 Arc Thrower',
-    'MD-17 Anti-Tank Mines',
-    'LAS-99 Quasar Cannon',
-    'SH-32 Shield Generator Pack',
-    'MD-8 Gas Mine',
-    'A/MG-43 Machine Gun Sentry',
-    'A/G-16 Gatling Sentry',
-    'A/M-12 Mortar Sentry',
-    'AX/AR-23 "Guard Dog"',
-    'A/AC-8 Autocannon Sentry',
-    'A/MLS-4X Rocket Sentry',
-    'A/M-23 EMS Mortar Sentry',
-    'EXO-45 Patriot Exosuit',
-    'EXO-49 Emancipator Exosuit',
-    'TX-41 Sterilizer',
-    'AX/TX-13 "Guard Dog" Dog Breath',
-]
+const armorList = document.getElementById("armor-list");
+const grenadesList = document.getElementById("grenades-list");
+const primariesList = document.getElementById("primaries-list");
+const secondariesList = document.getElementById("secondaries-list");
+const stratagemsList = document.getElementById("stratagems-list");
+const resultHelmet = document.getElementById("result-helmet");
+const resultArmor = document.getElementById("result-armor");
+const resultCape = document.getElementById("result-cape");
+const resultPrimary = document.getElementById("result-primary");
+const resultSecondary = document.getElementById("result-secondary");
+const resultGrenade = document.getElementById("result-grenade");
+const resultStratagem = document.getElementById("result-stratagem");
+const rollButton = document.getElementById("roll-button");
+
+const armors = data.armor_sets.map(x => x.armor)
+
+function appendToList(arr, listElement, idPrefix) {
+  for (let i = 0; i < arr.length; i++) {
+    listElement.innerHTML = listElement.innerHTML + `
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input " type="checkbox" id="${idPrefix}-${i}">
+          <label class="form-check-label" for="${idPrefix}-${i}">${arr[i]}</label>
+        </div>
+      </li>
+    `;
+  }
+}
+
+function init() {
+  console.log("Hello World");
+
+
+  appendToList(data.grenades, grenadesList, 'grenade');
+  appendToList(data.primaries, primariesList, 'primary');
+  appendToList(data.secondaries, secondariesList, 'secondary');
+  appendToList(data.stratagems, stratagemsList, 'stratagem');
+  appendToList(armors, armorList, 'armor');
+}
+
+function getRandomItem(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function handleRoll() {
+  console.log('rolled');
+  const armor_set = getRandomItem(data.armor_sets);
+
+  resultHelmet.innerText = armor_set.helmet;
+  resultArmor.innerText = armor_set.armor;
+  resultCape.innerText = armor_set.cape;
+  resultPrimary.innerText = getRandomItem(data.primaries);
+  resultSecondary.innerText = getRandomItem(data.secondaries);
+  resultGrenade.innerText = getRandomItem(data.grenades);
+  resultStratagem.innerText = getRandomItem(data.stratagems);
+}
+
+init();
+rollButton.addEventListener('click', handleRoll);
