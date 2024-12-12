@@ -11,7 +11,7 @@ const resultCape = document.getElementById("result-cape");
 const resultPrimary = document.getElementById("result-primary");
 const resultSecondary = document.getElementById("result-secondary");
 const resultGrenade = document.getElementById("result-grenade");
-const resultStratagem = document.getElementById("result-stratagem");
+const resultStratagems = document.getElementsByClassName("stratagem");
 const rollButton = document.getElementById("roll-button");
 
 const armors = data.armor_sets.map(x => x.armor)
@@ -53,12 +53,15 @@ function getStratagems() {
     }
   }
 
-  let stratagems = '';
-  for (const strat of strats) {
-    stratagems += `${data.stratagems[strat]}, `;
+  // let stratagems = '';
+  for (const stratagem of resultStratagems) {
+    stratagem.innerHTML = data.stratagems[strats.pop()]
   }
+  // for (const strat of strats) {
+  //   stratagems += `${data.stratagems[strat]}, `;
+  // }
 
-  return stratagems;
+  // return stratagems;
 }
 
 function handleRoll() {
@@ -71,7 +74,7 @@ function handleRoll() {
   resultPrimary.innerText = getRandomItem(data.primaries);
   resultSecondary.innerText = getRandomItem(data.secondaries);
   resultGrenade.innerText = getRandomItem(data.grenades);
-  resultStratagem.innerText = getStratagems();
+  getStratagems();
 }
 
 init();
