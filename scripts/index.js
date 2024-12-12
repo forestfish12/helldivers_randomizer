@@ -44,6 +44,23 @@ function getRandomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
+function getStratagems() {
+  const strats = [];
+  while (strats.length < 4) {
+    const index = Math.floor(Math.random() * data.stratagems.length);
+    if (!strats.includes(index)) {
+      strats.push(index);
+    }
+  }
+
+  let stratagems = '';
+  for (const strat of strats) {
+    stratagems += `${data.stratagems[strat]}, `;
+  }
+
+  return stratagems;
+}
+
 function handleRoll() {
   console.log('rolled');
   const armor_set = getRandomItem(data.armor_sets);
@@ -54,7 +71,7 @@ function handleRoll() {
   resultPrimary.innerText = getRandomItem(data.primaries);
   resultSecondary.innerText = getRandomItem(data.secondaries);
   resultGrenade.innerText = getRandomItem(data.grenades);
-  resultStratagem.innerText = getRandomItem(data.stratagems);
+  resultStratagem.innerText = getStratagems();
 }
 
 init();
