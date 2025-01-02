@@ -16,12 +16,24 @@ const rollButton = document.getElementById("roll-button");
 
 const armors = data.armor_sets.map(x => x.armor)
 
+/**
+ * @param {MouseEvent} e 
+ */
+function checkboxDivClickHandler(e) {
+  const checkInput = e.target.querySelector('input[type=checkbox]');
+  console.log(checkInput);
+  // checkInput.click(o);
+  checkInput.checked = false;
+  // console.log(!e.target.firstChild.checked);
+  console.log("div clicked");
+}
+
 function appendToList(arr, listElement, idPrefix) {
   for (let i = 0; i < arr.length; i++) {
     listElement.innerHTML = listElement.innerHTML + `
       <li class="list-group-item">
-        <div class="form-check">
-          <input class="form-check-input " type="checkbox" id="${idPrefix}-${i}">
+        <div class="form-check" for="${idPrefix}-${i}">
+          <input class="form-check-input" type="checkbox" id="${idPrefix}-${i}" checked>
           <label class="form-check-label" for="${idPrefix}-${i}">${arr[i]}</label>
         </div>
       </li>
@@ -31,13 +43,21 @@ function appendToList(arr, listElement, idPrefix) {
 
 function init() {
   console.log("Hello World");
-
+  const lists = [armorList, grenadesList, primariesList, secondariesList, stratagemsList];
 
   appendToList(data.grenades, grenadesList, 'grenade');
   appendToList(data.primaries, primariesList, 'primary');
   appendToList(data.secondaries, secondariesList, 'secondary');
   appendToList(data.stratagems, stratagemsList, 'stratagem');
   appendToList(armors, armorList, 'armor');
+
+  // TODO: fix checkboxDivClickHandler to prevent errors when clicking on child elements instead of list element.
+  // for (const list of lists) {
+  //   const checkLis = list.querySelectorAll('li.list-group-item');
+  //   for (const div of checkLis) {
+  //     div.addEventListener('click', checkboxDivClickHandler);
+  //   }
+  // }
 }
 
 function getRandomItem(arr) {
