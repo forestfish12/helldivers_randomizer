@@ -18,20 +18,26 @@ const rollButton = document.getElementById("roll-button");
  * @param {MouseEvent} e 
  */
 function checkboxDivClickHandler(e) {
-  const checkInput = e.target.querySelector('input[type=checkbox]');
-  console.log(checkInput);
-  // checkInput.click(o);
-  checkInput.checked = false;
-  // console.log(!e.target.firstChild.checked);
-  console.log("div clicked");
+  const checkInput = e.currentTarget.querySelector('input[type=checkbox]');
+  // // If the check box is clicked directly don't do anything.
+  // if (e.target == checkInput) {
+  //   return
+  // };
+  checkInput.checked = !checkInput.checked;
+  
+  const objRef = checkInput.id.split('-')[0];
+  const objKey = checkInput.value;
+  console.log(data[objRef][objKey]);
+  data[objRef][objKey] = checkInput.checked;
+  console.log(data[objRef][objKey]);
 }
 
-function appendToList(arr, listElement, idPrefix) {
+function buildChecklist(arr, listElement, idPrefix) {
   for (let i = 0; i < arr.length; i++) {
     listElement.innerHTML = listElement.innerHTML + `
       <li class="list-group-item">
         <div class="form-check" for="${idPrefix}-${i}">
-          <input class="form-check-input" type="checkbox" id="${idPrefix}-${i}" checked>
+          <input class="form-check-input" type="checkbox" id="${idPrefix}-${i}" value="${arr[i]}" checked>
           <label class="form-check-label" for="${idPrefix}-${i}">${arr[i]}</label>
         </div>
       </li>
@@ -39,8 +45,18 @@ function appendToList(arr, listElement, idPrefix) {
   }
 }
 
+// TODO: figure out a method to prevent double clicks when clicking on the checkbox directly.
+/**
+ * @param {Event} e 
+ */
+
+// function updateData(e) {
+//   const objRef = e.currentTarget.id.split('-')[0];
+//   const objKey = e.currentTarget.value;
+//   data[objRef][objKey] = e.currentTarget.checked;
+// }
+
 function init() {
-  console.log("Hello World");
   const lists = [armorList, grenadesList, primariesList, secondariesList, stratagemsList];
 
   buildChecklist(Object.keys(data.grenades), grenadesList, 'grenades');
@@ -49,13 +65,19 @@ function init() {
   buildChecklist(Object.keys(data.stratagems), stratagemsList, 'stratagems');
   buildChecklist(Object.keys(data.armor), armorList, 'armor');
 
-  // TODO: fix checkboxDivClickHandler to prevent errors when clicking on child elements instead of list element.
-  // for (const list of lists) {
-  //   const checkLis = list.querySelectorAll('li.list-group-item');
-  //   for (const div of checkLis) {
-  //     div.addEventListener('click', checkboxDivClickHandler);
-  //   }
-  // }
+  for (const list of lists) {
+    const checkLis = list.querySelectorAll('li.list-group-item');
+    for (const div of checkLis) {
+      div.addEventListener('click', checkboxDivClickHandler);
+    }
+  }
+
+  for (const list of lists) {
+    const checkInputs = list.querySelectorAll("input[type=checkbox]");
+    for (const input of checkInputs) {
+      // input.addEventListener('change', updateData);
+    }
+  }
 }
 
 function getRandomItem(obj) {
