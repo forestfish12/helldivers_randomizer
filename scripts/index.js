@@ -14,8 +14,6 @@ const resultGrenade = document.getElementById("result-grenade");
 const resultStratagems = document.getElementsByClassName("stratagem");
 const rollButton = document.getElementById("roll-button");
 
-const armors = data.armor_sets.map(x => x.armor)
-
 /**
  * @param {MouseEvent} e 
  */
@@ -45,11 +43,11 @@ function init() {
   console.log("Hello World");
   const lists = [armorList, grenadesList, primariesList, secondariesList, stratagemsList];
 
-  appendToList(data.grenades, grenadesList, 'grenade');
-  appendToList(data.primaries, primariesList, 'primary');
-  appendToList(data.secondaries, secondariesList, 'secondary');
-  appendToList(data.stratagems, stratagemsList, 'stratagem');
-  appendToList(armors, armorList, 'armor');
+  buildChecklist(Object.keys(data.grenades), grenadesList, 'grenades');
+  buildChecklist(Object.keys(data.primaries), primariesList, 'primaries');
+  buildChecklist(Object.keys(data.secondaries), secondariesList, 'secondaries');
+  buildChecklist(Object.keys(data.stratagems), stratagemsList, 'stratagems');
+  buildChecklist(Object.keys(data.armor), armorList, 'armor');
 
   // TODO: fix checkboxDivClickHandler to prevent errors when clicking on child elements instead of list element.
   // for (const list of lists) {
@@ -60,8 +58,9 @@ function init() {
   // }
 }
 
-function getRandomItem(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+function getRandomItem(obj) {
+  const keys = Object.keys(obj);
+  return keys[Math.floor(Math.random() * keys.length)];
 }
 
 function getStratagems() {
@@ -85,16 +84,15 @@ function getStratagems() {
 }
 
 function handleRoll() {
-  console.log('rolled');
-  const armor_set = getRandomItem(data.armor_sets);
-
-  resultHelmet.innerText = armor_set.helmet;
-  resultArmor.innerText = armor_set.armor;
-  resultCape.innerText = armor_set.cape;
+  // const armor_set = getRandomItem(data.armor_sets);
+  // resultHelmet.innerText = armor_set.helmet;
+  // resultArmor.innerText = armor_set.armor;
+  // resultCape.innerText = armor_set.cape;
+  
   resultPrimary.innerText = getRandomItem(data.primaries);
   resultSecondary.innerText = getRandomItem(data.secondaries);
   resultGrenade.innerText = getRandomItem(data.grenades);
-  getStratagems();
+  // getStratagems();
 }
 
 init();
